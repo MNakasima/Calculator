@@ -68,7 +68,7 @@
                 android:layout_height="30pt"
                 android:layout_weight="1"
                 android:background="@color/operations"
-                android:onClick="buNumberEvent"
+                android:onClick="buOpEvent"
                 android:text="/"
                 android:textColor="@color/whiteBack"
                 android:textSize="24sp" />
@@ -110,12 +110,12 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/buTimes"
+                android:id="@+id/buMult"
                 android:layout_width="match_parent"
                 android:layout_height="30pt"
                 android:layout_weight="1"
                 android:background="@color/operations"
-                android:onClick="buNumberEvent"
+                android:onClick="buOpEvent"
                 android:text="*"
                 android:textColor="@color/whiteBack"
                 android:textSize="24sp" />
@@ -157,12 +157,12 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/buMinus"
+                android:id="@+id/buSub"
                 android:layout_width="match_parent"
                 android:layout_height="30pt"
                 android:layout_weight="1"
                 android:background="@color/operations"
-                android:onClick="buNumberEvent"
+                android:onClick="buOpEvent"
                 android:text="-"
                 android:textColor="@color/whiteBack"
                 android:textSize="24sp" />
@@ -204,12 +204,12 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/buPlus"
+                android:id="@+id/buSum"
                 android:layout_width="match_parent"
                 android:layout_height="30pt"
                 android:layout_weight="1"
                 android:background="@color/operations"
-                android:onClick="buNumberEvent"
+                android:onClick="buOpEvent"
                 android:text="+"
                 android:textColor="@color/whiteBack"
                 android:textSize="24sp" />
@@ -249,7 +249,7 @@
             android:layout_height="30pt"
             android:layout_weight="2"
             android:background="@color/operations"
-            android:onClick="buNumberEvent"
+            android:onClick="buEqualEvent"
             android:text="="
             android:textColor="@color/whiteBack"
             android:textSize="24sp" />

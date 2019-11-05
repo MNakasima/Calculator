@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     fun buNumberEvent(view: View){
 
+        if(isNewOp) etShowNumber.setText("")
+
+        isNewOp = false
         val buSelected = view as Button
         var buClickValue:String = etShowNumber.text.toString()
 
@@ -37,6 +40,54 @@ class MainActivity : AppCompatActivity() {
 
         etShowNumber.setText(buClickValue)
 
+    }
+
+var op=""
+var oldNumber=""
+var isNewOp=true
+
+    fun buOpEvent (view:View){
+
+        val buSelected = view as Button
+
+        when(buSelected.id) {
+
+            buMult.id -> {
+                op = "*"
+            }
+
+            buDiv.id -> {
+                op = "/"
+            }
+
+            buSub.id -> {
+                op = "-"
+            }
+
+            buSum.id -> {
+                op = "+"
+            }
+
+        }
+
+        oldNumber = etShowNumber.text.toString()
+        isNewOp=true
+
+    }
+
+    fun buEqualEvent(view:View){
+
+        var newNumber=etShowNumber.text.toString()
+        var finalNumber:Double?=null
+        when(op){
+            "*" -> { finalNumber = oldNumber.toDouble() * newNumber.toDouble() }
+            "/" -> { finalNumber = oldNumber.toDouble() / newNumber.toDouble() }
+            "-" -> { finalNumber = oldNumber.toDouble() - newNumber.toDouble() }
+            "+" -> { finalNumber = oldNumber.toDouble() + newNumber.toDouble() }
+        }
+
+        etShowNumber.setText(finalNumber.toString())
+        isNewOp = true
     }
 }
 
