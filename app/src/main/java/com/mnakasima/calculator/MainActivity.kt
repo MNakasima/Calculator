@@ -89,5 +89,17 @@ var isNewOp=true
         etShowNumber.setText(finalNumber.toString())
         isNewOp = true
     }
+
+    fun buPercentEvent(view:View){
+        var number = etShowNumber.text.toString().toDouble()/100
+        etShowNumber.setText(number.toString())
+        isNewOp=true
+    }
+
+    fun buClean(view:View){
+        etShowNumber.setText("")
+        isNewOp=true
+    }
+
 }
 
