@@ -8,6 +8,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    var op=""
+    var oldNumber=""
+    var isNewOp=true
+    var dotAlreadyExists=true
+    var invertPlusMinus=true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,18 +39,36 @@ class MainActivity : AppCompatActivity() {
             bu7.id -> { buClickValue+= "7" }
             bu8.id -> { buClickValue+= "8" }
             bu9.id -> { buClickValue+= "9" }
-            buDot.id -> { buClickValue+= "." }
-            buPM.id -> { buClickValue = "-"+buClickValue }
+
+            buDot.id -> {
+
+                if(dotAlreadyExists){
+
+                    buClickValue+= "."
+                    dotAlreadyExists = false
+
+                }else{
+                    buClickValue = buClickValue
+                }
+
+            }
+
+            buPM.id -> {
+
+                if(invertPlusMinus){
+                    buClickValue = "-"+buClickValue
+                    invertPlusMinus=false
+                }else{
+                    buClickValue = buClickValue
+                }
+
+            }
 
         }
 
         etShowNumber.setText(buClickValue)
 
     }
-
-var op=""
-var oldNumber=""
-var isNewOp=true
 
     fun buOpEvent (view:View){
 
@@ -72,6 +96,8 @@ var isNewOp=true
 
         oldNumber = etShowNumber.text.toString()
         isNewOp=true
+        dotAlreadyExists=true
+        invertPlusMinus=true
 
     }
 
@@ -88,6 +114,8 @@ var isNewOp=true
 
         etShowNumber.setText(finalNumber.toString())
         isNewOp = true
+        dotAlreadyExists=true
+        invertPlusMinus=true
     }
 
     fun buPercentEvent(view:View){
@@ -99,6 +127,8 @@ var isNewOp=true
     fun buClean(view:View){
         etShowNumber.setText("")
         isNewOp=true
+        dotAlreadyExists=true
+        invertPlusMinus=true
     }
 
 }
